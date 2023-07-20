@@ -21,6 +21,8 @@ def translate_gender(gender_code):
         return 'male'
     elif gender_code == 'F':
         return 'female'
+    elif gender_code == 'O':
+        return 'other'
     else:
         return 'unknown'
 
