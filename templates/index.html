@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Results</title>
+</head>
+<body>
+    <h1>API Results</h1>
+    <form action="/" method="get">
+        <label for="age_group">Filter by Age Group:</label>
+        <select id="age_group" name="age_group">
+            <option value="all">All</option>
+            <option value="child">Child</option>
+            <option value="adult">Adult</option>
+            <option value="senior">Senior</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+    <ul>
+        {% for patient in data %}
+        <li>
+            <b>ID:</b> {{ patient.get('id', '10960451') }}
+            <br>
+            <b>Name:</b> {{ patient.get('name', '') }}
+            <br>
+            <b>Birthdate:</b> {{ patient.get('birthDate', '') }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
